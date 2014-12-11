@@ -1,0 +1,6 @@
+progress_report.aux
+progress_report.log
+progress_report.pdf
+progress_spec*
+*.cls
+*.gz
