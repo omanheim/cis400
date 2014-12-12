@@ -51,14 +51,14 @@ Bike-share systems first emerged in Europe in the early 2000s and rapidly grew i
 
 Today, many cities around the world boast booming bike-share programs. China's unequaled population is matched by the largest bike fleet in the world; the number of bikes in the city of Wuhan's program is estimated to be 98,000, while Hangzhou's bike-share program features over 50,000 of its own. In the United States, New York recently launched the nation's largest program with 6,000 bikes in 2013. Other American cities with large bike-share programs include Boston, San Francisco, Chicago, and Washington, D.C. In many cases, the implementation of a bike-share program has accompanied massive urban development projects that make cities more bicycle-friendly, thus making both the introduction and on-going operations expensive. \newline
 
-While there are numerous obstacles in implementing bike-share programs in new cities, some of the greatest are in the logistical details. Even once a city is able to overcome the financial, legal, and civil barriers to entry, it is crucial to the success of the program that bicycles are available in the right places at the right times, and for the right price. However, all bike-share programs share the same problem: riders tend to take some routes more than others, and bikes tend to collect at a few select stations. Alleviating this problem becomes a large operating expense for bike-share programs. This project aims to reduce this cost, using the application of supply and demand analysis to dynamic bike-share systems, which frequently reach disequilibrium. Under these circumstances, bikes need to be transported from one station to another to remedy the ``rebalancing�''problem. There are three specific goals for this project:
+While there are numerous obstacles in implementing bike-share programs in new cities, some of the greatest are in the logistical details. Even once a city is able to overcome the financial, legal, and civil barriers to entry, it is crucial to the success of the program that bicycles are available in the right places at the right times, and for the right price. However, all bike-share programs share the same problem: riders tend to take some routes more than others, and bikes tend to collect at a few select stations. Alleviating this problem becomes a large operating expense for bike-share programs. This project aims to reduce this cost, using the application of supply and demand analysis to dynamic bike-share systems, which frequently reach disequilibrium. Under these circumstances, bikes need to be transported from one station to another to remedy the ``rebalancing'' problem. There are three specific goals for this project:
 \begin{itemize*}
 	\item To reduce the rebalancing cost by developing a proprietary strategy for rebalancing.
          \item To incentivize bike-share users to naturally fix the rebalancing problem through gamification and a dynamic pricing model.
          \item To develop a smartphone application that incorporates the rebalancing solution for users.
 \end{itemize*}
 
-The rebalancing effort accounts for one of the major operating costs of many bike-share programs worldwide. The Capital Bikeshare program of Washington, D.C., for example, has expanded its rebalancing team from four at the start in 2010 to now 27 employees who move on average 70 to 80 bikes per day, racing to restore equilibrium in 120 minutes � before the program is fined by the city�s Department of Transportation. There are various solutions for the rebalancing problem, but human dispatchers are ultimately in charge. Algorithmic approaches help route vehicles that transport bikes from one station to another, but no current solution eliminates the problem entirely. Existing solutions require collaboration between a rebalancing supervisor and team to better match supply and demand.
+The rebalancing effort accounts for one of the major operating costs of many bike-share programs worldwide. The Capital Bikeshare program of Washington, D.C., for example, has expanded its rebalancing team from four at the start in 2010 to now 27 employees who move on average 70 to 80 bikes per day, racing to restore equilibrium in 120 minutes before the program is fined by the city's Department of Transportation. There are various solutions for the rebalancing problem, but human dispatchers are ultimately in charge. Algorithmic approaches help route vehicles that transport bikes from one station to another, but no current solution eliminates the problem entirely. Existing solutions require collaboration between a rebalancing supervisor and team to better match supply and demand.
 \newline
 
 Therefore, the cost of rebalancing can be reduced by developing an algorithm that most effectively routes the rebalancing team, in effect reducing the number of employees needed and the time required to return the system to equilibrium. Reducing the rebalancing cost will be complemented by an additional system for bike-share users themselves to naturally participate in the rebalancing act. This will be incentivized with monetary rewards, as users will receive credit or dollar compensation, and a dynamic pricing system. Each will be incorporated into a smartphone application so that users can participate in rebalancing the system. Therefore, the bike-share system will be made more efficient by ensuring that there is bike availability and spots to dock at all times, while also reducing the cost of rebalancing.
@@ -133,9 +133,7 @@ Modeling decision-making is a challenge since numerous factors affect people's d
 Once a preliminary model is developed, simulations will be run using carefully selected dependent variables. Previous studies experienced problems regarding the multicollinearity of independent variables. To mitigate this concern, principal component analysis will be used.
 
 \subsection{Mobile Application}
-In conjunction with the algorithmic model for designing an effective bike-share, a smartphone application is being developed which will allow for real-world use of the system. The application indicates where bike stations are located, the availability of bikes at each nearby station, and the associated price for renting a bike for a specified time period, all updated in real-time based on live supply and demand. The dynamic pricing algorithm will be incorporated into the system logic so that pricing changes as users reserve and return bikes in real time. The application also provides the user with a list of trips the user may take to assist in rebalancing the system, rewarding users who partake in the effort with immediate monetary or credit rewards. \newline
-
-Developing the application involves designing the user interface and coding the backend infrastructure. The app is currently being developed for iOS, and is available to iPhone users. It is being developed in Swift using Xcode, and uses the GoogleMaps SDK, which provides a map interface on which nearby stations are presented to the user. The app interacts with a backend server that maintains and tracks the bicycle and user data as the system runs. The server is built in Node.js with a MongoDB database, and its API allows for simple and fast communication with instances of the application running on users' mobile devices. \newline\newline
+In conjunction with the algorithmic model for designing an effective bike-share, a smartphone application is being developed which will allow for real-world use of the system. The application indicates where bike stations are located, the availability of bikes at each nearby station, and the associated price for renting a bike for a specified time period, all updated in real-time based on live supply and demand. The dynamic pricing algorithm will be incorporated into the system logic so that pricing changes as users reserve and return bikes in real time. The application also provides the user with a list of trips the user may take to assist in rebalancing the system, rewarding users who partake in the effort with immediate monetary or credit rewards. As a whole, the application should be simple to apply to a new or existing bike-share system of stations, bicycles, and users so that the entire program can run nearly autonomously with the software handling station flow, bicycle availability, and user payment and decision-making.\newline\newline
 
 A graphical representation of the entire system, including the available data, pricing model, bike station model, and software application, can be seen in Figure 2 below.
 
@@ -152,7 +150,30 @@ A graphical representation of the entire system, including the available data, p
 \subsection{Rebalancing Approach}
 Using existing historical data, we can create a 
 \subsection{Pricing Model}
+
 \subsection{Mobile Application}
+The mobile application is, as mentioned above, an interface for users to participate in the bike-share program, with the backend software maintaining all the moving parts associated with the dynamic system. The software is comprised of two parts; first, there is the user interface that users install on their own devices and use to interact with the bike-share program, and second, there is the backend infrastructure that is runs on a separate standalone server, maintaining and providing live data as reservations, rides, and payments occur. The app is being developed for iOS, and is available to iPhone users who create accounts to participate in the bike-share. The software is coded in Swift using Xcode, and uses the GoogleMaps SDK, which provides a geolocated map interface on which nearby stations are visually presented to the user. In the app's current state, users can navigate existing stations in their area and select a starting point for a trip, ``reserving'' a bike docked at the station for a set amount of time. If the user arrives before their reservation expires, they can unlock a bike by reading its QR code, initiating a trip that ends when the bike is returned to a station.\newline
+
+All actions are communicated with a remote server-side application, whose API allows for simple and fast communication with each instance of the mobile application. The back-end server is built in Node.js with a MongoDB database; both technologies were selected to ensure that the application runs reliably and quickly, as well as allows for scalability as the size of the bike-share grows and the number of requests rises. The database maintains the relationships between stations, bikes, and users, tracking availability and demand for bikes as users make requests and returns through the app.
+
+\begin{figure}[htb!]	\begin{center}
+		\includegraphics[width=1.0\linewidth]{img_0250}
+	\end{center}
+	\vspace{-12pt}
+	\label{fig:img1}
+\end{figure}
+\begin{figure}[htb!]	\begin{center}
+		\includegraphics[width=1.0\linewidth]{img_0251}
+	\end{center}
+	\vspace{-12pt}
+	\label{fig:img2}
+\end{figure}
+\begin{figure}[htb!]	\begin{center}
+		\includegraphics[width=1.0\linewidth]{img_0252}
+	\end{center}
+	\vspace{-12pt}
+	\label{fig:img3}
+\end{figure}
 
 \section{Remaining Work}
 
