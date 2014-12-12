@@ -70,16 +70,16 @@ Therefore, the cost of rebalancing can be reduced by developing an algorithm tha
 \label{sec:related_work}
 There is currently much research being conducted surrounding the rebalancing problem. According to Oliver O'Brien of the University College London, though, most rebalancing operators merely glance at a map of the system, identify full bike stations and empty ones, and then route a truck between them. In addition to common practices--such as never allowing a station to exceed a certain threshold or fall below another--scientists are actively developing algorithms for predictive modeling and route mapping for rebalancing vehicles.
 
-\subsection{ALGORITHMIC ROUTING}
+\subsection{Algorithmic Routing}
 This approach, pioneered by Gunther Raidl of the Vienna University of Technology and his colleagues at the Austrian Institute of Technology, uses routing algorithms for pickup and delivery vehicles. Existing algorithms used by package delivery services have been applied to bike-share programs, using those same algorithms to route pickup and delivery vehicles for bikes. This algorithm gives dispatchers updated suggestions throughout the day, incorporating bike demand forecasts based on the season, day of the week, and current weather. While this approach does not provide an exact solution, it does offer dispatchers an approximation to better their operations.
 
-\subsection{PREDICTIVE MODELING FOR DEMAND}
+\subsection{Predictive Modeling For Demand}
 David Shmoys, who works in collaboration with New York City's Citi Bike, developed a means to produce an online map showing the stations with capacity that is farthest off from predicted need. This in effect identifies stations in need of additional bikes. This solution does not, however, incorporate driver specific directions. Instead, dispatchers use maps and predetermined routes to guide vehicle drivers.
 
-\subsection{AUTONOMOUS REBALANCING}
+\subsection{Autonomous Rebalancing}
 State Intelligence, a London-based company led by computer scientist Lin Li, is working to develop an autonomous rebalancing system, whereby vehicles self-organize. This process requires that vehicles flit from station to station, directed by signals that convey whether a station needs additional bikes or has too many. The signal then attracts a vehicle, which in turn rebalances the system.
 
-\subsection{USER-DRIVEN REBALANCING AND DYNAMIC PRICING}
+\subsection{User-Driven Rebalancing and Dynamic Pricing}
 Various bike-share programs allow users to actually aid in the rebalancing process themselves, offering rewards, such as refunds and extra riding time, to return bikes to stations with low occupancy. Researcher led by Julius Pfrommer used predictive-based modeling to understand human response to rewards. The goal is to encourage users to return to underused stations, which reduces the expected cost of rebalancing bikes. In many cases, the cost of incentivizing users to rebalance the system is less than that of hiring additional rebalancers, indicating validity in this approach. In addition, the same group of scientists demonstrated that dynamic pricing, derived from the current and future states of the system, reduces the need to hire additional rebalancing employees, as well. Thus, both user incentives and dynamic pricing can be used to reduce the rebalancing cost.
 
 
@@ -161,19 +161,19 @@ The mobile application is, as mentioned above, an interface for users to partici
 
 All actions are communicated with a remote server-side application, whose API allows for simple and fast communication with each instance of the mobile application. The back-end server is built in Node.js with a MongoDB database; both technologies were selected to ensure that the application runs reliably and quickly, as well as allows for scalability as the size of the bike-share grows and the number of requests rises. Because the app runs on Heroku, we can easily and efficiently scale up the operations by running more web dynos.  The database maintains the relationships between stations, bikes, and users, tracking availability and demand for bikes as users make requests and returns through the app. MongoDB was a natural choice for use with Node.js because it can be queried easily and powerfully by constructing Javascript object literals that represent queries.  \newline
 
-\begin{figure}[htb!]
-\centering
-\begin{minipage}[b]{0.46\linewidth}
-	\includegraphics[width=1\linewidth]{img_0250}
-	\caption{Users may view a map of available stations near their location.}
-\label{fig:minipage1}
-\end{minipage}
-\quad
-\begin{minipage}[b]{0.46\linewidth}
-	\includegraphics[width=1\linewidth]{img_0252}
-	\caption{A bicycle reservation expires if not unlocked within the time limit.}
-\label{fig:minipage2}
-\end{minipage}
+\begin{figure}[htb!]	\begin{center}
+		\includegraphics[width=0.52\linewidth]{img_0250}	
+		\caption{Users may view a map of available stations near their location.}
+	\end{center}
+	\vspace{-12pt}
+	\label{fig:heatmap}
+\end{figure}
+\begin{figure}[htb!]	\begin{center}
+		\includegraphics[width=0.52\linewidth]{img_0252}
+		\caption{A bicycle reservation expires if not unlocked within the time limit.}
+	\end{center}
+	\vspace{-12pt}
+	\label{fig:heatmap}
 \end{figure}
 
 
@@ -217,18 +217,6 @@ Annual Meeting of the Transportation Research Board, Washington,  D.C., 2012. \n
 \item Rixey, Alexander R. "Station-Level Forecasting of Bike Sharing Ridership : Station Network Effects in Three U.S. Systems." (n.d.): n. pag. 15 Nov. 2012. Web. 30 Sept. 2014. <http://docs.trb.org/prp/13-1862.pdf>. \newline
 
 \end{enumerate*}
-% Here is a dirty hack. We insert so much vertical space that the
-% appendices, which want to begin in the left colunm underneath
-% "references", are pushed over to the right-hand column. If we looked
-% hard enough, there is probably a command to do exactly this (and
-% wouldn't need tweaked after edits).
-\vspace{295pt}
-
-% We then use appendices to share some additional information with
-% you, though you won't need appendices in your own proposal.
-\appendix
-\section{Figures}
-\label{app:figures}
 
 \end{document} 
 
