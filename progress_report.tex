@@ -150,7 +150,7 @@ A graphical representation of the entire system, including the available data, p
 
 \section{System Implementation}
 \subsection{Rebalancing Approach}
-Using existing historical data, we can create a 
+Using existing historical data, we can create a Markov model of travelers moving among stations, where the probability of a traveler taking a bike from station $A$ to station $B$ is the fraction of $A \rightarrow B$ trips out of all trips originating from $A$.  By setting up an initial allocation of bikes and running this model, we can see the equilibrium states of the system.  As we have demonstrated previously, some stations will become saturated with bikes, while others will be void of bikes.  However, we can augment this system with various rebalancing heuristics, such as rebalancing when stations are less than 20\% and more than 80\% full, or less than 30\% and more than 70\% full, etc.
 \subsection{Pricing Model}
 \subsection{Mobile Application}
 
